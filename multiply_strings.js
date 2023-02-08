@@ -32,10 +32,12 @@ botIdx = botArr.length -1
 topIdx = topArr.length -1
 let zerocunt = 0
 console.log("X_____________________________________")
-botArr.forEach((botDigit) => {
+let outputArr = []
+botArr.reverse().forEach((botDigit) => {
   let currentLineArr = []
-  topArr.reverse().forEach((digit)=>{
-    currentLineArr.unshift(digit*botArr[botIdx])
+  
+  topArr.forEach((digit)=>{
+    currentLineArr.push(digit*botDigit)
     
   })
   // add zerocount number of zeros to the array.
@@ -44,10 +46,19 @@ while(zerocounter > 0) {
   currentLineArr.push(0)
   zerocounter -= 1
 }
-  console.log(currentLineArr)
+  outputArr.push(currentLineArr)
   // console.log(zerocunt)
   zerocunt +=1
 })
+outputArr.forEach((output) =>  console.log(output))
+let asInt = outputArr.map((output)=>{
+  return(parseInt(output.join("")))})
+  let sum = 0
+  for (let i = 0; i < asInt.length; i++) {
+    sum += asInt[i];
+}
+sumString = sum.toString()
+console.log(sumString.split(""))
 
 // let firstLine = botArr[botIdx]* topArr[topIdx]
 
@@ -57,7 +68,7 @@ while(zerocounter > 0) {
 
 }
 
-testFunction(["1","2","3","4","5"], ["1","2","3"])
+testFunction(["1","2","3"], ["1","2","3"])
 
 
 // i'm thinking we structure the whole thing in arrays
