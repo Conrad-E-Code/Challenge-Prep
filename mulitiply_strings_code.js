@@ -40,10 +40,12 @@ function testFunction(nums1, nums2) {
       currentLineArr.unshift(0)
        digit*botDigit < 10 ? 
        currentLineArr.push(digit*botDigit)
-      :currentLineArr[currentLineArr.length -1] += digit*botDigit/10
+      :currentLineArr[currentLineArr.length -1] += parseInt(digit*botDigit/10)
+      //side note iterate through an array starting from the end and take any numbers that are
+       greater than 10 and 
         currentLineArr.push(digit*botDigit % 10)
-        currentLineArr[currentLineArr.length -1] < 10 ? console.log("carried the one") :
-        console.log("need to carry again")
+        currentLineArr[currentLineArr.length -1] > 10 ? console.log("carried the one") :
+        console.log("did nt carry")
       console.log(currentLineArr[currentLineArr.length -1])
       // currentLineArr.push((digit*botDigit)%10)
     })
