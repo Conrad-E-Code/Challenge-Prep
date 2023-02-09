@@ -7,8 +7,8 @@
 // [1,2,3] bottom number
 function testFunction(nums1, nums2) {
   //condiotional for small number on bottom and big number top
-  let topArr = []
-  let botArr = []
+  let topArr 
+  let botArr 
  function assignPlaces(nums1, nums2) {
     if (nums1.length > nums2.length) {
        topArr = nums1
@@ -38,7 +38,6 @@ botArr.reverse().forEach((botDigit) => {
   
   topArr.forEach((digit)=>{
     currentLineArr.push(digit*botDigit)
-    
   })
   // add zerocount number of zeros to the array.
 let zerocounter = zerocunt
@@ -68,7 +67,7 @@ console.log(sumString.split(""))
 
 }
 
-testFunction(["1","2","3"], ["1","2","3"])
+testFunction(["1","2","3","5"], ["1","2","3","5"])
 
 
 // i'm thinking we structure the whole thing in arrays
